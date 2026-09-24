@@ -1,0 +1,17 @@
+services:
+  selenium:
+    image: selenium/standalone-chrome:latest
+    restart: unless-stopped
+
+  ics_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - selenium
+    ports:
+      - "8670:8670"
+    env_file: .env
+    environment:
+      - SELENIUM_URL=http://selenium:4444

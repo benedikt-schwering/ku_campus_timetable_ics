@@ -1,0 +1,8 @@
+beautifulsoup4
+python-dotenv
+cachetools
+selenium
+requests
+fastapi
+uvicorn
+ics
