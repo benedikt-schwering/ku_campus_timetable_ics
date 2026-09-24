@@ -1,0 +1,1 @@
+# ku_campus_timetable_ics
