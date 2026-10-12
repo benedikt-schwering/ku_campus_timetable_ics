@@ -1,4 +1,5 @@
 from dotenv import load_dotenv, find_dotenv
+from override import apply_override_rules
 from fastapi import FastAPI, Response
 from parser import parse_timetable
 from crawler import get_timetable
@@ -31,6 +32,10 @@ def get_timetable_ics(token: str):
 
     events = parse_timetable(
         timetable_html=timetable_html,
+    )
+
+    events = apply_override_rules(
+        events=events,
     )
 
     calendar = Calendar()
