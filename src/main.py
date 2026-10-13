@@ -42,6 +42,7 @@ def get_timetable_ics(token: str):
 
     for event in events:
         ics_event = Event(
+            uid=event.uid,
             name=event.name,
             begin=event.begin,
             end=event.end,
